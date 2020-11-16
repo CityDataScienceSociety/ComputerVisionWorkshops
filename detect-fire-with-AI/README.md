@@ -9,4 +9,10 @@ In this workshop we will see the basic workflow for creating a model that, based
 
 With a set of training images containing labelled examples of both classes, the network will *learn* how to distinguish (in this case) two classes.
 
+Fire  
 
+![Fire](img/fire.png)
+
+No fire
+
+![No fire](img/nofire.png)
