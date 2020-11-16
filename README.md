@@ -1,4 +1,4 @@
-# ComputerVisionWorkshops
+# Computer Vision Workshops
 Jupyter Notebooks for accompanying workshops  
 ## Friday 19:00, November 20th, 2020
 ### Computer Vision – [How to detect fire with AI](https://github.com/CityDataScienceSociety/ComputerVisionWorkshops/blob/main/detect-fire-with-AI)
