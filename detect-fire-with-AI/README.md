@@ -1,4 +1,4 @@
-# Detect Fire with AI
+# How to detect fire with AI
 ## Training a Convolutional Neural Network for a Computer Vision Binary Classification Task
 
 In this workshop we will see the basic workflow for creating a model that, based on a training image dataset, predicts if a given image is of one class (fire) or another (no fire).
