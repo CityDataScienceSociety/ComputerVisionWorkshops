@@ -53,6 +53,25 @@ Trying t2.medium:
 
 Installed ok.
 
+Need to recompile tensoflow:
+
+"This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags."
+
+$ python single_prediction.py --filepath datasets/nofire/20200904_090357_014.jpg
+2021-05-14 13:45:58.932254: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2021-05-14 13:45:58.932408: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2021-05-14 13:46:00.307649: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2021-05-14 13:46:00.307806: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2021-05-14 13:46:00.307912: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (ip-172-31-2-180): /proc/driver/nvidia/version does not exist
+2021-05-14 13:46:00.308269: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-05-14 13:46:00.624220: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+2021-05-14 13:46:00.624791: I tensorflow/core/platform/profile_utils/cpu_utils.cc:114] CPU Frequency: 2400050000 Hz
+Prediction array: [9.9999750e-01 2.5325219e-06]
+Prediction of no fire: 0.9999975
+Prediction of fire: 2.5325219e-06
+
 
  
 
