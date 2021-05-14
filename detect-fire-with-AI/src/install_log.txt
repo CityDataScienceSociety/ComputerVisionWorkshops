@@ -10,7 +10,7 @@ $ pip install tensorflow
 Collecting tensorflow
   Downloading https://files.pythonhosted.org/packages/de/f0/96fb2e0412ae9692dbf400e5b04432885f677ad6241c088ccc5fe7724d69/tensorflow-1.14.0-cp36-cp36m-manylinux1_x86_64.whl (109.2MB)
     99% |████████████████████████████████| 109.2MB 36.6MB/s eta 0:00:01Killed
-$ $ tail /var/log/syslog 
+$ tail /var/log/syslog 
 May 14 08:32:38 ip-172-31-45-232 kernel: [ 2904.895361] [  19017]     0 19017    18076      181   180224        0             0 sshd
 May 14 08:32:38 ip-172-31-45-232 kernel: [ 2904.895363] [  19018]   109 19018    18076      186   176128        0             0 sshd
 May 14 08:32:38 ip-172-31-45-232 kernel: [ 2904.895364] [  19025]  1000 19025    11136      153   126976        0             0 top
@@ -23,4 +23,35 @@ May 14 08:32:38 ip-172-31-45-232 kernel: [ 2904.895377] Out of memory: Killed pr
 May 14 08:32:38 ip-172-31-45-232 kernel: [ 2904.928642] oom_reaper: reaped process 19116 (pip3), now anon-rss:0kB, file-rss:0kB, shmem-rss:0kB
 
 Trying on a t2.micro
+
+    1  sudo apt install python3
+    2  python --version
+    3  alias python=python3
+    9  sudo apt update
+   10  sudo apt install python3-pip
+   11  pip --version
+   12  alias pip=pip3
+   18  pip3 install --upgrade pip
+   19  python3 -m pip install --upgrade setuptools
+   20  pip install tensorflow
+   
+ Ran out of memory again:
+ 
+$ tail /var/log/syslog 
+May 14 09:12:24 ip-172-31-46-93 kernel: [ 2027.897760] [   1709]  1000  1709    48435      623   262144        0             0 (sd-pam)
+May 14 09:12:24 ip-172-31-46-93 kernel: [ 2027.897761] [   1813]  1000  1813    27043      293   249856        0             0 sshd
+May 14 09:12:24 ip-172-31-46-93 kernel: [ 2027.897762] [   1819]  1000  1819     5782      427    90112        0             0 bash
+May 14 09:12:24 ip-172-31-46-93 kernel: [ 2027.897763] [   1837]     0  1837    26997      252   258048        0             0 sshd
+May 14 09:12:24 ip-172-31-46-93 kernel: [ 2027.897764] [   1905]  1000  1905    27168      431   253952        0             0 sshd
+May 14 09:12:24 ip-172-31-46-93 kernel: [ 2027.897765] [   1906]  1000  1906     3732       37    69632        0             0 scp
+May 14 09:12:24 ip-172-31-46-93 kernel: [ 2027.897767] [  18867]  1000 18867   264764   196649  1875968        0             0 pip3
+May 14 09:12:24 ip-172-31-46-93 kernel: [ 2027.897768] oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=/,mems_allowed=0,global_oom,task_memcg=/user.slice,task=pip3,pid=18867,uid=1000
+May 14 09:12:24 ip-172-31-46-93 kernel: [ 2027.897775] Out of memory: Killed process 18867 (pip3) total-vm:1059056kB, anon-rss:786592kB, file-rss:4kB, shmem-rss:0kB, UID:1000 pgtables:1832kB oom_score_adj:0
+May 14 09:12:24 ip-172-31-46-93 kernel: [ 2027.954213] oom_reaper: reaped process 18867 (pip3), now anon-rss:0kB, file-rss:0kB, shmem-rss:0kB
+
+Trying t2.medium:
+
+
+ 
+
 
