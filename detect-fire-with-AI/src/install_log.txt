@@ -51,6 +51,8 @@ May 14 09:12:24 ip-172-31-46-93 kernel: [ 2027.954213] oom_reaper: reaped proces
 
 Trying t2.medium:
 
+Installed ok.
+
 
  
 
