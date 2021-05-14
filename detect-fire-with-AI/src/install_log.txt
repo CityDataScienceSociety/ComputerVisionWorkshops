@@ -1,0 +1,26 @@
+**************
+* 2021.05.14 *
+**************
+
+Tensorflow install on AWS
+
+When installing on AWS t2.nano instance:
+$ pip install tensorflow
+$ pip install tensorflow
+Collecting tensorflow
+  Downloading https://files.pythonhosted.org/packages/de/f0/96fb2e0412ae9692dbf400e5b04432885f677ad6241c088ccc5fe7724d69/tensorflow-1.14.0-cp36-cp36m-manylinux1_x86_64.whl (109.2MB)
+    99% |████████████████████████████████| 109.2MB 36.6MB/s eta 0:00:01Killed
+$ $ tail /var/log/syslog 
+May 14 08:32:38 ip-172-31-45-232 kernel: [ 2904.895361] [  19017]     0 19017    18076      181   180224        0             0 sshd
+May 14 08:32:38 ip-172-31-45-232 kernel: [ 2904.895363] [  19018]   109 19018    18076      186   176128        0             0 sshd
+May 14 08:32:38 ip-172-31-45-232 kernel: [ 2904.895364] [  19025]  1000 19025    11136      153   126976        0             0 top
+May 14 08:32:38 ip-172-31-45-232 kernel: [ 2904.895365] [  19026]     0 19026    26997      252   245760        0             0 sshd
+May 14 08:32:38 ip-172-31-45-232 kernel: [ 2904.895366] [  19098]  1000 19098    26997      251   241664        0             0 sshd
+May 14 08:32:38 ip-172-31-45-232 kernel: [ 2904.895367] [  19099]  1000 19099     5786      431    81920        0             0 bash
+May 14 08:32:38 ip-172-31-45-232 kernel: [ 2904.895368] [  19116]  1000 19116   109340    76548   827392        0             0 pip3
+May 14 08:32:38 ip-172-31-45-232 kernel: [ 2904.895370] oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=/,mems_allowed=0,global_oom,task_memcg=/user.slice,task=pip3,pid=19116,uid=1000
+May 14 08:32:38 ip-172-31-45-232 kernel: [ 2904.895377] Out of memory: Killed process 19116 (pip3) total-vm:437360kB, anon-rss:306192kB, file-rss:0kB, shmem-rss:0kB, UID:1000 pgtables:808kB oom_score_adj:0
+May 14 08:32:38 ip-172-31-45-232 kernel: [ 2904.928642] oom_reaper: reaped process 19116 (pip3), now anon-rss:0kB, file-rss:0kB, shmem-rss:0kB
+
+Trying on a t2.micro
+
